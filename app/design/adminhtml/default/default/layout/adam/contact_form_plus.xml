@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<layout>
+    <adminhtml_contacts_index>
+        <reference name="content">
+            <block type="adam_contact_form_plus/adminhtml_contact_container" name="contact_container">
+                <block type="adam_contact_form_plus/adminhtml_contact_container_grid" name="contact_grid" />
+            </block>
+        </reference>
+    </adminhtml_contacts_index>
+
+    <adminhtml_contacts_grid>
+        <update handle="formkey"/>
+        <block type="adam_contact_form_plus/adminhtml_contact_container_grid" name="contact_grid" output="toHtml"/>
+    </adminhtml_contacts_grid>
+</layout>

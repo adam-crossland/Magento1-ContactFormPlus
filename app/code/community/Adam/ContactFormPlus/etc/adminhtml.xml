@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<config>
+    <menu>
+        <customer>
+            <children>
+                <adam_contact_form_plus translate="title" module="adam_contact_form_plus">
+                    <title>Contacts</title>
+                    <action>adminhtml/contacts/</action>
+                    <sort_order>200</sort_order>
+                </adam_contact_form_plus>
+            </children>
+        </customer>
+    </menu>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <customer>
+                        <children>
+                            <adam_contact_form_plus translate="title">
+                                <title>Contacts</title>
+                                <sort_order>200</sort_order>
+                            </adam_contact_form_plus>
+                        </children>
+                    </customer>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

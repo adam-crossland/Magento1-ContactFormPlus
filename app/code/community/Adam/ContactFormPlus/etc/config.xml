@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>            
+    <modules>
+        <Adam_ContactFormPlus>
+            <version>1.0.0</version>
+        </Adam_ContactFormPlus>
+    </modules>
+    
+    <global>        
+        <models>
+            <adam_contact_form_plus>
+                <class>Adam_ContactFormPlus_Model</class>
+                <resourceModel>adam_contact_form_plus_resource</resourceModel>
+            </adam_contact_form_plus>
+
+            <adam_contact_form_plus_resource>
+                <class>Adam_ContactFormPlus_Model_Resource</class>
+                <entities>
+                    <contact>
+                        <table>adam_contact_form_plus_contacts</table>
+                    </contact>
+                </entities>
+            </adam_contact_form_plus_resource>
+        </models>
+           
+        <blocks>
+            <adam_contact_form_plus>
+                <class>Adam_ContactFormPlus_Block</class>
+            </adam_contact_form_plus>
+        </blocks>
+        
+        <helpers>
+            <adam_contact_form_plus>
+                <class>Adam_ContactFormPlus_Helper</class>
+            </adam_contact_form_plus>
+        </helpers>
+
+        <resources>
+            <adam_contact_form_plus_setup>
+                <setup>
+                    <module>Adam_ContactFormPlus</module>
+                    <class>Mage_Sales_Model_Resource_Setup</class>
+                </setup>
+            </adam_contact_form_plus_setup>
+        </resources>
+
+        <events>
+            <adam_contact_form_plus_mail_sent_successfully>
+                <observers>
+                    <adam_contact_form_plus>
+                        <class>adam_contact_form_plus/observers_mail</class>
+                        <method>adam_contact_form_plus_mail_sent_successfully</method>
+                    </adam_contact_form_plus>
+                </observers>
+            </adam_contact_form_plus_mail_sent_successfully>
+        </events>
+    </global>
+
+    <frontend>
+        <routers>
+            <contacts>
+                <args>
+                    <modules>
+                        <contact_form_plus before="Mage_Contacts">Adam_ContactFormPlus</contact_form_plus>
+                    </modules>
+                </args>
+            </contacts>
+        </routers>
+    </frontend>
+
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <adam_contact_form_plus before="Mage_Adminhtml">Adam_ContactFormPlus_Adminhtml</adam_contact_form_plus>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+
+    <adminhtml>
+        <layout>
+            <updates>
+                <adam_contact_form_plus>
+                    <file>adam/contact_form_plus.xml</file>
+                </adam_contact_form_plus>
+            </updates>
+        </layout>
+    </adminhtml>
+</config>
